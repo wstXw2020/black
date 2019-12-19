@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2019-12-18 19:35:54 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="black" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.woniu.pojo.User" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="user">
+        <id name="uid" type="int">
+            <column name="uid"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.woniu.pojo.Rol" embed-xml="true" fetch="select" insert="true" name="rol" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="rid"/>
+        </many-to-one>
+        <many-to-one class="com.woniu.pojo.Student" embed-xml="true" fetch="select" insert="true" name="student" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="sid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="uname" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="uname"/>
+        </property>
+        <property generated="never" lazy="false" name="upwd" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="upwd"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="students" optimistic-lock="true" sort="unsorted" table="student">
+            <key on-delete="noaction">
+                <column name="uid"/>
+            </key>
+            <one-to-many class="com.woniu.pojo.Student" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="rols" optimistic-lock="true" sort="unsorted" table="rol">
+            <key on-delete="noaction">
+                <column name="uid"/>
+            </key>
+            <one-to-many class="com.woniu.pojo.Rol" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

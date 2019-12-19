@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2019-12-18 19:35:54 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="black" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.woniu.pojo.Kqjilu" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="kqjilu">
+        <id name="krid" type="int">
+            <column name="krid"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.woniu.pojo.Kqtype" embed-xml="true" fetch="select" insert="true" name="kqtype" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="kid"/>
+        </many-to-one>
+        <many-to-one class="com.woniu.pojo.Student" embed-xml="true" fetch="select" insert="true" name="student" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="sid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="sdate" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="sdate"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2019-12-18 19:35:54 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="black" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.woniu.pojo.Clazz" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="clazz">
+        <id name="cid" type="int">
+            <column name="cid"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.woniu.pojo.Jieduan" embed-xml="true" fetch="select" insert="true" name="jieduan" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="lid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="cname" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="cname"/>
+        </property>
+        <property generated="never" lazy="false" name="type" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="type"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="rols" optimistic-lock="true" sort="unsorted" table="relationship_11">
+            <key on-delete="noaction">
+                <column name="cid" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="com.woniu.pojo.Rol" not-found="exception" unique="false">
+                <column name="rid" not-null="true"/>
+            </many-to-many>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="students" optimistic-lock="true" sort="unsorted" table="student">
+            <key on-delete="noaction">
+                <column name="cid"/>
+            </key>
+            <one-to-many class="com.woniu.pojo.Student" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

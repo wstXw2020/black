@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2019-12-18 19:35:54 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="black" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.woniu.pojo.Kaoshi" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="kaoshi">
+        <id name="scid" type="int">
+            <column name="scid"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.woniu.pojo.Jieduan" embed-xml="true" fetch="select" insert="true" name="jieduan" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="lid"/>
+        </many-to-one>
+        <many-to-one class="com.woniu.pojo.Student" embed-xml="true" fetch="select" insert="true" name="student" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="sid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="score" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="score"/>
+        </property>
+        <property generated="never" lazy="false" name="date" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="date"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2019-12-18 19:35:54 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="black" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.woniu.pojo.Student" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="student">
+        <id name="sid" type="int">
+            <column name="sid"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.woniu.pojo.Clazz" embed-xml="true" fetch="select" insert="true" name="clazz" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="cid"/>
+        </many-to-one>
+        <many-to-one class="com.woniu.pojo.User" embed-xml="true" fetch="select" insert="true" name="user" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="uid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="sname" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="sname"/>
+        </property>
+        <property generated="never" lazy="false" name="sex" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="sex"/>
+        </property>
+        <property generated="never" lazy="false" name="idcard" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="idcard"/>
+        </property>
+        <property generated="never" lazy="false" name="intime" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="intime"/>
+        </property>
+        <property generated="never" lazy="false" name="phone" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="phone"/>
+        </property>
+        <property generated="never" lazy="false" name="address" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="address"/>
+        </property>
+        <property generated="never" lazy="false" name="school" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="school"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="kaoshis" optimistic-lock="true" sort="unsorted" table="kaoshi">
+            <key on-delete="noaction">
+                <column name="sid"/>
+            </key>
+            <one-to-many class="com.woniu.pojo.Kaoshi" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="kqjilus" optimistic-lock="true" sort="unsorted" table="kqjilu">
+            <key on-delete="noaction">
+                <column name="sid"/>
+            </key>
+            <one-to-many class="com.woniu.pojo.Kqjilu" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="users" optimistic-lock="true" sort="unsorted" table="user">
+            <key on-delete="noaction">
+                <column name="sid"/>
+            </key>
+            <one-to-many class="com.woniu.pojo.User" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
