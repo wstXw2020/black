@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+		<package name="Stu" namespace="/" extends="struts-default">
+			<action name="save" class="com.ssh.Action.StuAction"  method="save">
+				<result name="save"  type="redirectAction">findAll.action</result>
+			</action>
+			<action name="findAll" class="com.ssh.Action.StuAction"  method="findAll">
+				<result name="findAll" >/stu.jsp</result>
+			</action>
+			<action name="delete" class="StuAction"  method="delete">
+				<result type="redirectAction">findAll.action</result>
+			</action>
+			<action name="findByid" class="StuAction"  method="findByid">
+				<result >/xg.jsp</result>
+			</action>
+			<action name="update" class="StuAction"  method="update">
+				<result type="redirectAction">findAll.action</result>
+			</action>
+		</package>
+		
+<!-- 		<package name="User" namespace="/" extends="struts-default">
+			<action name="findAll" class="com.ssh.Action.UserAction"  method="findAll">
+				<result name="findAll" >/stu.jsp</result>
+			</action>
+		</package> -->
+	</struts>
