@@ -6,16 +6,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	$(document).ready(function(){
-		
-	});
+		function print(){   
+				var uname = document.getElementById("uname").value;
+				if(uname==""){
+					alert("用户名不能为空");
+					return false;
+				}
+		  }
 </script>
 </head>
 <body>
-	<form action="findAll.action" method="post">
-		账号：<input type="text" name="uname">
-		密码：<input type="password" name="upwd">
-		<button name="dl" onclick="dl()">登录</button>
+	<form action="login.action" method="post">
+		账号：<input type="text" name="user.uname" id="uname">
+		密码：<input type="password" name="user.upwd">
+		身份：<select>
+					<option>教师</option>
+					<option>学生</option>
+				</select>
+		<button onclick="return print()">登录</button>
 	</form>
 </body>
 </html>

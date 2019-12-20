@@ -35,4 +35,11 @@ public class UserServiceDAOImpl implements UserServiceDAO {
 		return list;
 	}
 
+	@Override
+	public boolean login(User user) {
+		// TODO Auto-generated method stub
+		boolean b = UserDAO.login(user);
+		return b;
+	}
+
 }

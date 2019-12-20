@@ -7,5 +7,6 @@ import com.ssh.pojo.User;
 public interface UserDAO {
 	
 	List<User> findAll();
+	boolean login(User user);
 
 }
