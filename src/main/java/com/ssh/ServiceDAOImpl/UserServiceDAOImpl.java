@@ -36,9 +36,9 @@ public class UserServiceDAOImpl implements UserServiceDAO {
 	}
 
 	@Override
-	public boolean login(User user) {
+	public User login(User user) {
 		// TODO Auto-generated method stub
-		boolean b = UserDAO.login(user);
+		User b = UserDAO.login(user);
 		return b;
 	}
 

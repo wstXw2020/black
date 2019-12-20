@@ -19,8 +19,6 @@ public class UserDAOImpl implements UserDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	
-
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
@@ -37,20 +35,15 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public boolean login(User user) {
+	public User login(User user) {
 		// TODO Auto-generated method stub
-		boolean b = false;
 		String s = "select * from User where uname=? and upwd=?";
 		NativeQuery createSQLQuery = sessionFactory.getCurrentSession().createSQLQuery(s);
+		createSQLQuery.addEntity(User.class);
 		createSQLQuery.setParameter(1, user.getUname());
 		createSQLQuery.setParameter(2, user.getUpwd());
-		List u = createSQLQuery.list();
-		if(u.size()!=0) {
-			b = true;
-		}else {
-			b = false;
-		}
-		return b;
+		List<User> u = createSQLQuery.list();
+		return u.size()==0?null:u.get(0);
 	}
 
 }

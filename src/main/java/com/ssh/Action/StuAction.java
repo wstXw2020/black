@@ -2,6 +2,7 @@ package com.ssh.Action;
 
 import java.util.List;
 
+import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -23,26 +24,11 @@ public class StuAction {
 	private List<Student> slist;
 	private Clazz clazz;
 	private User user;
-	private List<User> ulist;
 	
-	public List<User> getUlist() {
-		return ulist;
-	}
-
-	public void setUlist(List<User> ulist) {
-		this.ulist = ulist;
-	}
 
 	@Autowired
 	private StuServiceDAO StuServiceDAO;
 
-	public UserServiceDAO getUserServiceDAO() {
-		return UserServiceDAO;
-	}
-
-	public void setUserServiceDAO(UserServiceDAO userServiceDAO) {
-		UserServiceDAO = userServiceDAO;
-	}
 
 	public Clazz getClazz() {
 		return clazz;
@@ -76,27 +62,34 @@ public class StuAction {
 		this.slist = slist;
 	}
 
-	public StuServiceDAO getStuServiceDAO() {
-		return StuServiceDAO;
-	}
-
-	public void setStuServiceDAO(StuServiceDAO stuServiceDAO) {
-		StuServiceDAO = stuServiceDAO;
-	}
-
 	public String findAll() {
 		slist = StuServiceDAO.findAll();
 		return "findAll";
 	}
 	
 	public String login() {
-		boolean b = UserServiceDAO.login(user);
+		user = UserServiceDAO.login(user);
+		ServletActionContext.getRequest().getSession().setAttribute("loginUser", user);
 		String s = null;
-		if(b==true) {
-			s = "findlogin";
-		}else if(b==false){
+		if(user!=null) {
+			if(user.getSid()==null) {
+				int i = user.getRid();
+				if(i==2) {//跳转到教学主管界面
+					s = "jxzg";
+				}
+				if(i==3) {//跳转到班主任界面
+					s = "bzr";
+				}
+				if(i==4) {//跳转到教师界面
+					s = "js";
+				}
+			}else {
+				s = "findlogin";
+			}
+		}else{
 			s = "login";
 		}
+		System.out.println(s);
 		return s;
 	}
 	

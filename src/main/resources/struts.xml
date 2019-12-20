@@ -10,6 +10,10 @@
 			<action name="login" class="com.ssh.Action.StuAction"  method="login">
 				<result name="login"  type="redirect">/login.jsp</result>
 				<result name="findlogin"  type="redirect">findAll.action</result>
+				<result name="js"  type="redirect">/teacher.jsp</result><!-- 教师界面 -->
+				<result name="jxzg"  type="redirect">/jxzg.jsp</result><!--教学主管界面  -->
+				<result name="bzr"  type="redirect">/bzr.jsp</result><!-- 班主任界面 -->
+				
 			</action>
 		</package>
 		

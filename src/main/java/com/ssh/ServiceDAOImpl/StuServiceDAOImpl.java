@@ -17,7 +17,6 @@ public class StuServiceDAOImpl implements StuServiceDAO{
 	@Autowired
 	StuDAO StuDAO;
 
-	
 	public StuServiceDAOImpl() {
 		// TODO Auto-generated constructor stub
 	}
