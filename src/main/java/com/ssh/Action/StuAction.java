@@ -91,7 +91,6 @@ public class StuAction {
 	
 	public String login() {
 		boolean b = UserServiceDAO.login(user);
-		Rol r = user.getRol();
 		String s = null;
 		if(b==true) {
 			s = "findlogin";
