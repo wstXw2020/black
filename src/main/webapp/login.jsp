@@ -19,10 +19,6 @@
 	<form action="login.action" method="post">
 		账号：<input type="text" name="user.uname" id="uname">
 		密码：<input type="password" name="user.upwd">
-		身份：<select>
-					<option>教师</option>
-					<option>学生</option>
-				</select>
 		<button onclick="return print()">登录</button>
 	</form>
 </body>

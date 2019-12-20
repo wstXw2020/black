@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,9 +11,6 @@
 <body>
 	<form action="gs.do" method="post" name="goodsForm">
 		<div style="margin:auto;width:70%;text-align: right;margin-top: 20px">
-			<!--学生姓名：<input type="text" name="goods_code" value="${requestScope.gsb.goods_code}">
-			商品名称：<input type="text" name="goods_name" value="${requestScope.gsb.goods_name}">
-			<input type="submit" value="查询">-->
 			<a class="btn btn-info btn-sm" href="stuExamAdd.jsp"><span class="glyphicon glyphicon-plus"></span>增加</a>
 		</div>
 		<table class="table table-striped table-bordered table-hover" style="margin: 10px auto;width: 70%">
