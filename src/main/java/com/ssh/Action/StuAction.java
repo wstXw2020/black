@@ -69,10 +69,10 @@ public class StuAction {
 	
 	public String login() {
 		user = UserServiceDAO.login(user);
-		String uname = user.getUname();
-		ServletActionContext.getRequest().getSession().setAttribute("uname", uname);
 		String s = null;
 		if(user!=null) {
+			String uname = user.getUname();
+			ServletActionContext.getRequest().getSession().setAttribute("uname", uname);
 			if(user.getSid()==null) {
 				int i = user.getRid();
 				if(i==2) {//跳转到教学主管界面
@@ -88,8 +88,9 @@ public class StuAction {
 				s = "findlogin";
 			}
 		}else{
-			s = "login";
+			s = "login1";
 		}
+		System.out.println(s);
 		return s;
 	}
 	
