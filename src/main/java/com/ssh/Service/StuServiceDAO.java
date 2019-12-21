@@ -1,4 +1,4 @@
-package com.ssh.ServiceDAO;
+package com.ssh.Service;
 
 import java.util.List;
 
