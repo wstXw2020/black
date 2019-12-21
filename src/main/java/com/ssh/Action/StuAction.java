@@ -6,8 +6,8 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.ssh.ServiceDAO.StuServiceDAO;
-import com.ssh.ServiceDAO.UserServiceDAO;
+import com.ssh.Service.StuServiceDAO;
+import com.ssh.Service.UserServiceDAO;
 import com.ssh.pojo.Clazz;
 import com.ssh.pojo.Rol;
 import com.ssh.pojo.Student;
@@ -69,7 +69,8 @@ public class StuAction {
 	
 	public String login() {
 		user = UserServiceDAO.login(user);
-		ServletActionContext.getRequest().getSession().setAttribute("loginUser", user);
+		String uname = user.getUname();
+		ServletActionContext.getRequest().getSession().setAttribute("uname", uname);
 		String s = null;
 		if(user!=null) {
 			if(user.getSid()==null) {
@@ -89,7 +90,6 @@ public class StuAction {
 		}else{
 			s = "login";
 		}
-		System.out.println(s);
 		return s;
 	}
 	

@@ -1,4 +1,4 @@
-package com.ssh.ServiceDAOImpl;
+package com.ssh.ServiceImpl;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ssh.DAO.StuDAO;
-import com.ssh.ServiceDAO.StuServiceDAO;
+import com.ssh.Service.StuServiceDAO;
 import com.ssh.pojo.Student;
 
 @Transactional
