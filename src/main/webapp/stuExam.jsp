@@ -16,11 +16,9 @@
 		<table class="table table-striped table-bordered table-hover" style="margin: 10px auto;width: 70%">
 			<thead>
 				<tr>
-					<th>sid</th>
-					<th>cname</th>
-					<th>uname</th>
-					<th>sname</th>
-					<th>sex</th>
+					<th>班级</th>
+					<th>姓名</th>
+					<th>性别</th>
 					<th>idcard</th>
 					<th>intime</th>
 					<th>phone</th>
@@ -32,9 +30,7 @@
 			<tbody>
 					<s:iterator value="slist"  status="i">
 						<tr>
-							<td><s:property value="sid" /></td>
-							<td><s:property value="clazz.cname" /></td>
-							<td><s:property value="user.uname" /></td>
+							<td><s:property value="clazz.type" /></td>
 							<td><s:property value="sname" /></td>
 							<td><s:property value="sex" /></td>
 							<td><s:property value="idcard" /></td>
