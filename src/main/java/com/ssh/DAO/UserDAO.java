@@ -8,5 +8,6 @@ public interface UserDAO {
 	
 	List<User> findAll();
 	User login(User user);
+	
 
 }

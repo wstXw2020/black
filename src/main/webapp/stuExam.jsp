@@ -26,6 +26,7 @@
 					<th>phone</th>
 					<th>address</th>
 					<th>school</th>
+					<th colspan="2"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,6 +42,8 @@
 							<td><s:property value="phone" /></td>
 							<td><s:property value="address" /></td>
 							<td><s:property value="school" /></td>
+							<td><a href="ssc.do?id=${s.supplier_id }"  class="btn btn-danger btn-sm">删除</a></td>
+							<td><a href="findone.action?sid=${s.supplier_id }" class="btn btn-success  btn-sm" >修改</a></td>
 						</tr>
 					</s:iterator>
 				<tr>

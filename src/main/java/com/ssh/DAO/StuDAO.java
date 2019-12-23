@@ -7,5 +7,6 @@ import com.ssh.pojo.Student;
 public interface StuDAO {
 
 	List<Student> findAll();
+	Student findone(Integer sid);
 	
 }

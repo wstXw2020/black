@@ -36,4 +36,11 @@ public class StuServiceDAOImpl implements StuServiceDAO{
 		return list;
 	}
 
+	@Override
+	public Student findone(Integer sid) {
+		// TODO Auto-generated method stub
+		Student stu = StuDAO.findone(sid);
+		return stu;
+	}
+
 }

@@ -68,21 +68,26 @@ public class StuAction {
 		return "findAll";
 	}
 	
+	public String findone() {
+		student = StuServiceDAO.findone(student.getSid());
+		return "findAll";
+	}
+	
 	public String login() {
 		user = UserServiceDAO.login(user);
 		String s = null;
 		if(user!=null) {
 			String uname = user.getUname();
 			ServletActionContext.getRequest().getSession().setAttribute("uname", uname);
-			if(user.getSid()==null) {
-				int i = user.getRid();
-				if(i==2) {//跳转到教学主管界面
+			if(user.getStudent()==null) {
+				String str = user.getRol().getRtype();
+				if(str.equals("教学主管")) {//跳转到教学主管界面
 					s = "jxzg";
 				}
-				if(i==3) {//跳转到班主任界面
+				if(str.equals("班主任")) {//跳转到班主任界面
 					s = "bzr";
 				}
-				if(i==4) {//跳转到教师界面
+				if(str.equals("老师")) {//跳转到教师界面
 					s = "js";
 				}
 			}else {
