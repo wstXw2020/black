@@ -17,8 +17,8 @@
 			<thead>
 				<tr>
 					<th>sid</th>
-					<th>cid</th>
-					<th>uid</th>
+					<th>cname</th>
+					<th>uname</th>
 					<th>sname</th>
 					<th>sex</th>
 					<th>idcard</th>
@@ -32,8 +32,8 @@
 					<s:iterator value="slist"  status="i">
 						<tr>
 							<td><s:property value="sid" /></td>
-							<td><s:property value="clazz.cid" />期</td>
-							<td><s:property value="user.uid" /></td>
+							<td><s:property value="clazz.cname" /></td>
+							<td><s:property value="user.uname" /></td>
 							<td><s:property value="sname" /></td>
 							<td><s:property value="sex" /></td>
 							<td><s:property value="idcard" /></td>

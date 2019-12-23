@@ -8,11 +8,7 @@
 				<result name="findAll" >/stuExam.jsp</result>
 			</action>
 			<action name="login" class="com.ssh.Action.StuAction"  method="login">
-<<<<<<< HEAD
 				<result name="login1"  type="redirect">/login.jsp</result>
-=======
-				<result name="login"  type="redirect">/login.jsp</result>
->>>>>>> branch 'master' of https://github.com/1041533501/SSH.git
 				<result name="findlogin"  type="redirect">findAll.action</result>
 				<result name="js"  type="redirect">/teacher.jsp</result><!-- 教师界面 -->
 				<result name="jxzg"  type="redirect">/jxzg.jsp</result><!--教学主管界面  -->
