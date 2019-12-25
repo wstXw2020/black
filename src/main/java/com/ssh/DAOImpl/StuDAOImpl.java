@@ -32,5 +32,4 @@ public class StuDAOImpl implements StuDAO {
 		Student stu = (Student) createQuery.list();
 		return stu;
 	}
-
 }

@@ -64,7 +64,6 @@ public class StuAction {
 
 	public String findAll() {
 		slist = StuServiceDAO.findAll();
-		System.out.println(slist);
 		return "findAll";
 	}
 	
@@ -96,7 +95,6 @@ public class StuAction {
 		}else{
 			s = "login1";
 		}
-		System.out.println(s);
 		return s;
 	}
 	
