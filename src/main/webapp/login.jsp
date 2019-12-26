@@ -7,16 +7,6 @@
 <title>Insert title here</title>
 <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- <script type="text/javascript">
-		function print(){   
-				var uname = document.getElementById("uname").value;
-				if(uname==""){
-					alert("用户名不能为空");
-					return false;
-				}
-		  }
-</script> -->
-
 </head>
 <body>
 
