@@ -1,5 +1,5 @@
 package com.ssh.pojo;
-// Generated 2019-12-23 18:00:09 by Hibernate Tools 5.4.7.Final
+// Generated 2019-12-26 16:04:58 by Hibernate Tools 5.4.7.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +13,8 @@ public class Clazz implements java.io.Serializable {
 	private Jieduan jieduan;
 	private String cname;
 	private String type;
+	private String bzr;
+	private String ls;
 	private Set rols = new HashSet(0);
 	private Set students = new HashSet(0);
 
@@ -23,11 +25,13 @@ public class Clazz implements java.io.Serializable {
 		this.cid = cid;
 	}
 
-	public Clazz(int cid, Jieduan jieduan, String cname, String type, Set rols, Set students) {
+	public Clazz(int cid, Jieduan jieduan, String cname, String type, String bzr, String ls, Set rols, Set students) {
 		this.cid = cid;
 		this.jieduan = jieduan;
 		this.cname = cname;
 		this.type = type;
+		this.bzr = bzr;
+		this.ls = ls;
 		this.rols = rols;
 		this.students = students;
 	}
@@ -64,6 +68,22 @@ public class Clazz implements java.io.Serializable {
 		this.type = type;
 	}
 
+	public String getBzr() {
+		return this.bzr;
+	}
+
+	public void setBzr(String bzr) {
+		this.bzr = bzr;
+	}
+
+	public String getLs() {
+		return this.ls;
+	}
+
+	public void setLs(String ls) {
+		this.ls = ls;
+	}
+
 	public Set getRols() {
 		return this.rols;
 	}
@@ -80,4 +100,11 @@ public class Clazz implements java.io.Serializable {
 		this.students = students;
 	}
 
+	@Override
+	public String toString() {
+		return "Clazz [cid=" + cid + ", jieduan=" + jieduan + ", cname=" + cname + ", type=" + type + ", bzr=" + bzr
+				+ ", ls=" + ls + "]";
+	}
+	
+	
 }

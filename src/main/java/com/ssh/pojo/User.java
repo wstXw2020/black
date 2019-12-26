@@ -1,5 +1,5 @@
 package com.ssh.pojo;
-// Generated 2019-12-23 18:00:09 by Hibernate Tools 5.4.7.Final
+// Generated 2019-12-26 16:04:58 by Hibernate Tools 5.4.7.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -89,12 +89,5 @@ public class User implements java.io.Serializable {
 	public void setRols(Set rols) {
 		this.rols = rols;
 	}
-
-	@Override
-	public String toString() {
-		return "User [uid=" + uid + ", rol=" + rol + ", student=" + student + ", uname=" + uname + ", upwd=" + upwd
-				+ "]";
-	}
-	
 
 }

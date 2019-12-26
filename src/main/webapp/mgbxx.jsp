@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -15,25 +15,19 @@
 			<td>班主任</td>
 			<td>代课老师</td>
 			<td>考试情况 </td>
-			<td>考勤情况 </td>
-		
+			<td>周考平均分 </td>
 		</tr>
 	</thead>
 	<tbody>
-		
-		<tr>
-			<td>1期</td>
-			<td>张军豪</td>
-			<td>张三丰</td>
-			<td>优</td>
-			<td>良好</td>
-				
-			
-		</tr>
-	
-		<tr>
-		</tr>
-		
+		<s:iterator value="listc"  status="i">
+			<tr>
+				<td><s:property value="cname" /></td>
+				<td><s:property value="bzr" /></td>
+				<td><s:property value="ls" /></td>
+				<td><s:property value="type" /></td>
+				<td><s:property value="jieduan.week" /></td>
+			</tr>
+		</s:iterator>	
 	</tbody>
 </table>
 	</body>

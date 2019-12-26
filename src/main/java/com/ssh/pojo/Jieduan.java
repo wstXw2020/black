@@ -1,5 +1,5 @@
 package com.ssh.pojo;
-// Generated 2019-12-23 18:00:09 by Hibernate Tools 5.4.7.Final
+// Generated 2019-12-26 16:04:58 by Hibernate Tools 5.4.7.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -69,5 +69,11 @@ public class Jieduan implements java.io.Serializable {
 	public void setClazzs(Set clazzs) {
 		this.clazzs = clazzs;
 	}
+
+	@Override
+	public String toString() {
+		return "Jieduan [lid=" + lid + ", lname=" + lname + ", week=" + week + "]";
+	}
+	
 
 }

@@ -12,7 +12,7 @@
 		    width: 100%;
 		    height: 100vh;	/* 重点一 */
 		    margin: 0 auto;
-		    background-image: url(images/6.jpg);
+		    background-image: url(images/12.jpg);
 		    background-repeat: no-repeat;
 		    background-size: cover; /* 重点二 */
 		    overflow: auto;
@@ -38,8 +38,8 @@
 			
 			  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			  	<ul class="nav navbar-nav navbar-right">
-					<li><a href="tjxbj.jsp"><span class="glyphicon glyphicon-home"style="color: white;">新班级启动</a></span></li>
-					<li><a href="mgbxx.jsp"><span class="glyphicon glyphicon-list"style="color: white;">班级阶段信息</a></span></li>
+					<li><a href="findrAll.action"><span class="glyphicon glyphicon-home"style="color: white;">新班级启动</a></span></li>
+					<li><a href="findcAll.action"><span class="glyphicon glyphicon-list"style="color: white;">班级阶段信息</a></span></li>
 					<li><a href="#"><span class="glyphicon glyphicon-question-sign"style="color: white;">安全退出</a></span></li>
 				</ul>
 			  </div>

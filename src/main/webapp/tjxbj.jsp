@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags"  prefix="s"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -29,34 +30,44 @@
 </head>
 <body>
 <div id="container" style="margin-top: 100px" class="container">
-     <form class="form-horizontal" action="typeadd.do" method="post" > 
-     <input type="hidden" name="xbj" value="0">
+     <form class="form-horizontal" action="savec.action" method="post" > 
+     
+      <div class="form-group" class="abc" >
+			<label class="col-md-5 col-sm-5 control-label" style="color: paleturquoise;">cid：</label>
+			<div class="col-md-3 ">
+				<input type="text" class="form-control"  required="required" name="clazz.cid">
+			</div>
+		</div>
      
      	<div class="form-group" class="abc" >
 			<label class="col-md-5 col-sm-5 control-label" style="color: paleturquoise;">新班级期数：</label>
 			<div class="col-md-3 ">
-				<input type="text" class="form-control"  required="required" name="xbj">
+				<input type="text" class="form-control"  required="required" name="clazz.cname">
 			</div>
 		</div>
 		
 		<div class="form-group">
 			<label class="col-md-5 col-sm-5 control-label" style="color: paleturquoise;">代课老师：</label>
 			<div class="col-md-3 ">
-			   <select class="form-control"><option></option></select>
+			<%-- <select class="form-control"><option></option></select>  --%>
+			<s:select list="listr"  class="form-control" listValue="rname" name="clazz.ls" listKey="cid" value="rname"></s:select>
 			</div>
-				</div>
+		</div>
 		<div class="form-group">
-			<label class="col-md-5 col-sm-5 control-label" style="color: paleturquoise;">本期班主任：</label>
+			<label class="col-md-5 col-sm-5 control-label" style="color: paleturquoise;">班主任：</label>
 			<div class="col-md-3 ">
-			   <select class="form-control"><option></option></select>
-			
+			<s:select list="listbzr"  class="form-control" listValue="rname" name="clazz.bzr" listKey="cid" value="rname"></s:select>
 			</div>
 		</div>
             
 	<div class="form-group" class="abc" >
-			<label class="col-md-5 col-sm-5 control-label" style="color: paleturquoise;">班级类型：</label>
+			<label class="col-md-5 col-sm-5 control-label" style="color: paleturquoise;">班级成绩：</label>
 			<div class="col-md-3 ">
-				<input type="text" class="form-control"  required="required" name="xbj">
+				 <select class="form-control" name="clazz.type">
+				 	<option value="优" >优</option>
+				 	<option value="良">良</option>
+				 	<option value="差">差</option>
+				 </select>
 			</div>
 		</div>
 		
@@ -65,7 +76,7 @@
 		<div class="form-group">
 			<label class="col-md-5 col-sm-5"></label>
 			<div class="col-md-3">
-				<input type="submit" class="btn btn-info btn-block" value="保存">
+				<input type="submit" class="btn btn-info btn-block" value="保存"  >
 				
 			</div>
 			

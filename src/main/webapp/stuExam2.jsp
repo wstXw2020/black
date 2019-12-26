@@ -10,6 +10,9 @@
 </head>
 <body>
 	<form action="gs.do" method="post" name="goodsForm">
+		<div style="margin:auto;width:70%;text-align: right;margin-top: 20px">
+			<a class="btn btn-info btn-sm" href="stuExamAdd.jsp"><span class="glyphicon glyphicon-plus"></span>增加</a>
+		</div>
 		<table class="table table-striped table-bordered table-hover" style="margin: 10px auto;width: 70%">
 			<thead>
 				<tr>
@@ -21,6 +24,7 @@
 					<th>phone</th>
 					<th>address</th>
 					<th>school</th>
+					<th colspan="2"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -34,6 +38,8 @@
 							<td><s:property value="phone" /></td>
 							<td><s:property value="address" /></td>
 							<td><s:property value="school" /></td>
+							<td><a href="ssc.do?sid=${s.supplier_id }"  class="btn btn-danger btn-sm">删除</a></td>
+							<td><a href="findone.action?sid=<s:property value="sid" />" class="btn btn-success  btn-sm" >修改</a></td>
 						</tr>
 					</s:iterator>
 				<tr>

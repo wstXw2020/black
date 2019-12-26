@@ -6,6 +6,8 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.ssh.Service.ClazzService;
+import com.ssh.Service.RolService;
 import com.ssh.Service.StuServiceDAO;
 import com.ssh.Service.UserServiceDAO;
 import com.ssh.pojo.Clazz;
@@ -20,15 +22,63 @@ public class StuAction {
 	
 	@Autowired
 	private UserServiceDAO UserServiceDAO;
+	@Autowired
+	private RolService rs;
+	@Autowired
+	private ClazzService cs;
+	private List<Clazz> listc;
+	private List<Rol> listr;
+	private Rol rol;
 	private Student student;
 	private List<Student> slist;
 	private Clazz clazz;
 	private User user;
+	private List<Rol> listbzr;
 	
+	public List<Clazz> getListc() {
+		return listc;
+	}
+
+	public void setListc(List<Clazz> listc) {
+		this.listc = listc;
+	}
+
+	public ClazzService getCs() {
+		return cs;
+	}
+
+	public void setCs(ClazzService cs) {
+		this.cs = cs;
+	}
+
+	public List<Rol> getListbzr() {
+		return listbzr;
+	}
+
+	public void setListbzr(List<Rol> listbzr) {
+		this.listbzr = listbzr;
+	}
+
+	public List<Rol> getListr() {
+		return listr;
+	}
+
+	public void setListr(List<Rol> listr) {
+		this.listr = listr;
+	}
+
 
 	@Autowired
 	private StuServiceDAO StuServiceDAO;
 
+
+	public Rol getRol() {
+		return rol;
+	}
+
+	public void setRol(Rol rol) {
+		this.rol = rol;
+	}
 
 	public Clazz getClazz() {
 		return clazz;
@@ -70,6 +120,32 @@ public class StuAction {
 	public String findone() {
 		student = StuServiceDAO.findone(student.getSid());
 		return "findAll";
+	}
+	
+	public String save() {
+		listr = rs.findrAll();
+		return "save";
+	}
+	
+	public String findrAll() {
+		listr = rs.findrAllls();
+		listbzr = rs.findrAllbzr();
+		return "findrAll";
+	}
+	
+	public String update() {
+		listr = rs.findrAllls();
+		return "update";
+	}
+	
+	public String findcAll() {
+		listc = cs.findcAll();
+		return "findcAll";
+	}
+	
+	public String savec() {
+		cs.save(clazz);
+		return "savec";
 	}
 	
 	public String login() {

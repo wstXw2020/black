@@ -1,5 +1,5 @@
 package com.ssh.pojo;
-// Generated 2019-12-23 18:00:09 by Hibernate Tools 5.4.7.Final
+// Generated 2019-12-26 16:04:58 by Hibernate Tools 5.4.7.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -150,13 +150,5 @@ public class Student implements java.io.Serializable {
 	public void setUsers(Set users) {
 		this.users = users;
 	}
-
-	@Override
-	public String toString() {
-		return "Student [sid=" + sid + ", clazz=" + clazz + ", user=" + user + ", sname=" + sname + ", sex=" + sex
-				+ ", idcard=" + idcard + ", intime=" + intime + ", phone=" + phone + ", address=" + address
-				+ ", school=" + school + "]";
-	}
-	
 
 }
