@@ -50,13 +50,13 @@
 			<label class="col-md-5 col-sm-5 control-label" style="color: paleturquoise;">代课老师：</label>
 			<div class="col-md-3 ">
 			<%-- <select class="form-control"><option></option></select>  --%>
-			<s:select list="listr"  class="form-control" listValue="rname" name="clazz.ls" listKey="cid" value="rname"></s:select>
+			<s:select list="listr"  class="form-control" listValue="rname" name="clazz.ls" listKey="rname" value="rname"></s:select>
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-md-5 col-sm-5 control-label" style="color: paleturquoise;">班主任：</label>
 			<div class="col-md-3 ">
-			<s:select list="listbzr"  class="form-control" listValue="rname" name="clazz.bzr" listKey="cid" value="rname"></s:select>
+			<s:select list="listbzr"  class="form-control" listValue="rname" name="clazz.bzr" listKey="rname" value="rname"></s:select>
 			</div>
 		</div>
             

@@ -16,17 +16,17 @@
 					<th>班级</th>
 					<th>姓名</th>
 					<th>性别</th>
-					<th>idcard</th>
-					<th>intime</th>
-					<th>phone</th>
-					<th>address</th>
-					<th>school</th>
+					<th>身份证号</th>
+					<th>入学时间</th>
+					<th>手机号</th>
+					<th>地址</th>
+					<th>学校</th>
 				</tr>
 			</thead>
 			<tbody>
 					<s:iterator value="slist"  status="i">
 						<tr>
-							<td><s:property value="clazz.type" /></td>
+							<td><s:property value="clazz.cname" /></td>
 							<td><s:property value="sname" /></td>
 							<td><s:property value="sex" /></td>
 							<td><s:property value="idcard" /></td>
@@ -36,29 +36,6 @@
 							<td><s:property value="school" /></td>
 						</tr>
 					</s:iterator>
-				<tr>
-					<td colspan="7">
-						<a href="javascript:goPage(1)">首页</a>
-						<a href="javascript:goPage(${requestScope.pb.currentPage-1})">上一页</a>
-						<c:forEach begin="1" end="${requestScope.pb.pages}" var="i">
-							<c:choose>
-								<c:when test="${requestScope.pb.currentPage == i}">
-									${i}
-								</c:when>
-								<c:otherwise>
-									<a href="javascript:goPage(${i})">${i}</a>
-								</c:otherwise>
-							</c:choose>
-						</c:forEach>
-						<a href="javascript:goPage(${requestScope.pb.currentPage+1})">下一页</a>
-						<a href="javascript:goPage(${requestScope.pb.pages})">尾页</a>
-						每页显示
-						<input type="number" onchange="goPage(1)" name="pageSize" value="${requestScope.pb.pageSize}"/>
-						条
-						共有${requestScope.pb.totalCount}条/${requestScope.pb.pages}页
-						当前为第${requestScope.pb.currentPage}页
-					</td>
-				</tr>
 			</tbody>
 		</table>
 		<input type="hidden" name="cutPage" value="${requestScope.pb.currentPage}"/>
