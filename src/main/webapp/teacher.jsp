@@ -112,10 +112,10 @@ if(session.getAttribute("uname")==null){
 						<span class="pull-right glyphicon glyphicon-chevron-down"></span> 
 					</a> 
 					<ul id="systemSetting" class="nav nav-list collapse out secondmenu" style="height: 0px;"> 
-						<li><a href="Kqjilu_kqList" target="ifs"><i class="glyphicon glyphicon-user"></i>查看考勤</a></li>
-						<li><a href="Kaoshi_kaList" target="ifs"><i class="glyphicon glyphicon-th-list"></i>周考成绩</a></li>
+						<li><a href="stuKQ.action" target="ifs"><i class="glyphicon glyphicon-user"></i>查看考勤</a></li>
+						<li><a href="stuKS.action" target="ifs"><i class="glyphicon glyphicon-th-list"></i>周考成绩</a></li>
 						
-						
+						<li><a href="#" target="ifs"><i class="glyphicon glyphicon-edit"></i>修改密码</a></li>
 					</ul> 
 				</li>
 				
