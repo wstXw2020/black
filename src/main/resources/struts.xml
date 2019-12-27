@@ -26,6 +26,23 @@
 			<action name="savec" class="com.ssh.Action.StuAction"  method="savec">
 				<result name="savec"  type="redirect">findcAll.action</result>
 			</action>
+			 <!-- 考勤 -->
+            <action name="stuKQ" class="com.ssh.Action.KqjiluAction"  method="kqList">
+				<result name="kqList" >/stuKQ.jsp</result>
+			</action>
+			<!-- 周考 -->
+			<action name="stuKS" class="com.ssh.Action.KaoshiAction"  method="kaList">
+				<result name="kaList" >/stuKS.jsp</result>
+			</action>
+			<action name="KSAddUI" class="com.ssh.Action.KaoshiAction"  method="saveUI">
+				<result name="saveUI" >/stuKSAdd.jsp</result>
+			</action>
+			<action name="KSAdd" class="com.ssh.Action.KaoshiAction"  method="save">
+				<result name="save"  type="redirect">stuKS.action</result>
+			</action>
+			<action name="KSUpdUI" class="com.ssh.Action.KaoshiAction"  method="saveUI">
+				<result name="saveUI" >/stuKSUpd.jsp</result>
+			</action>
 		</package>
 		
 	</struts>

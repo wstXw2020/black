@@ -115,7 +115,7 @@ if(session.getAttribute("uname")==null){
 						<li><a href="Kqjilu_kqList" target="ifs"><i class="glyphicon glyphicon-user"></i>查看考勤</a></li>
 						<li><a href="Kaoshi_kaList" target="ifs"><i class="glyphicon glyphicon-th-list"></i>周考成绩</a></li>
 						
-						<li><a href="#" target="ifs"><i class="glyphicon glyphicon-edit"></i>修改密码</a></li>
+						
 					</ul> 
 				</li>
 				
